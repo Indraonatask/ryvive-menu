@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Caffeine Barr — Premium Digital Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* The Caffeine Barr - Olive & Wood Aesthetic */
+    --bg-main: #F7F6F0; /* Soft creamy sage base */
+    --surface: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --primary: #4A5D23; /* Rich Olive Green */
+    --primary-glow: rgba(74, 93, 35, 0.15);
+    --wood-accent: #8B5D33; /* Warm Wooden Brown */
+    --wood-glow: rgba(139, 93, 51, 0.15);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --text-primary: #2C3522; /* Very dark olive/charcoal */
+    --text-muted: #66705C;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+    --whatsapp: #25D366;
+    --shadow-3d: 0 10px 30px rgba(74, 93, 35, 0.05), inset 0 1px 0 rgba(255,255,255,1);
+    --card-action-bg: #F4F5F0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    background: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* PREMIUM HERO */
+  .hero {
+    background: radial-gradient(circle at 50% 0%, #EAECE4 0%, var(--bg-main) 70%);
+    padding: 60px 24px 40px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .hero-logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 25px var(--primary-glow);
+    background: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=300&h=300&fit=crop') center/cover;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--primary-glow);
+    border: 1px solid rgba(74, 93, 35, 0.2);
+    color: var(--primary);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: var(--wood-accent); font-style: italic; }
+  .hero p {
+    color: var(--text-muted);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .hero-ig {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 5px;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  /* BLURRED NAV */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 246, 240, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 10px 0;
+  }
+  .nav-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 16px;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    color: #ffffff;
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px var(--primary-glow);
+  }
+
+  /* SEARCH */
+  .search-wrap { padding: 24px 16px 8px; }
+  .search-box {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 12px 20px;
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+  .search-box input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-primary);
+    outline: none;
+  }
+  .search-icon { color: var(--wood-accent); font-size: 16px; }
+
+  /* SECTION HEADERS */
+  .section-header {
+    padding: 40px 16px 8px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+  .section-header span {
+    font-size: 11px;
+    color: var(--wood-accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+    font-weight: 600;
+  }
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--wood-accent), transparent);
+    margin: 8px 16px 24px;
+    opacity: 0.2;
+  }
+
+  /* MENU CARDS */
+  .menu-grid { padding: 0 16px; display: flex; flex-direction: column; gap: 16px; }
+  .menu-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    box-shadow: var(--shadow-3d);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  
+  .card-img-wrap { width: 100%; height: 180px; overflow: hidden; border-bottom: 1px solid var(--glass-border); }
+  .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .menu-card:hover .card-img-wrap img { transform: scale(1.05); }
+
+  .featured-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    color: var(--primary);
+    padding: 6px 12px; border-radius: 50px;
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    z-index: 5; border: 1px solid var(--glass-border);
+  }
+
+  .card-top-content { display: flex; padding: 18px 18px 12px; gap: 16px; }
+  .card-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .card-bottom-action {
+    background: var(--card-action-bg);
+    border-top: 1px solid var(--glass-border);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-price { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+  
+  .order-btn {
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--primary-glow);
+    transition: all 0.2s;
+  }
+  .order-btn:active { transform: scale(0.95); }
+
+  /* TOGGLE PILLS */
+  .size-picker {
+    display: flex;
+    background: var(--surface);
+    padding: 4px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    gap: 2px;
+  }
+  .size-pill {
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+  }
+  .size-pill.active {
+    background: var(--wood-accent);
+    color: #ffffff;
+  }
+
+  /* CART FAB */
+  .cart-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 24px;
+    z-index: 300;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 32px var(--primary-glow);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+  }
+  .cart-fab.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
+  .cart-badge {
+    background: var(--wood-accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+  }
+
+  /* CART DRAWER */
+  .cart-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 400;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+
+  .cart-drawer {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100%;
+    width: min(420px, 100vw);
+    background: var(--bg-main);
+    border-left: 1px solid var(--glass-border);
+    z-index: 401;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+  }
+  .cart-drawer.open { transform: translateX(0); }
+
+  .cart-drawer-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cart-drawer-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--text-primary); }
+  .cart-close-btn {
+    background: rgba(0,0,0,0.05);
+    border: none;
+    border-radius: 50%;
+    width: 36px; height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-primary);
+  }
+
+  .cart-items-list { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+  .cart-empty { text-align: center; color: var(--text-muted); padding: 60px 20px; font-size: 15px; }
+
+  .cart-item {
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .cart-item-addon { font-size: 12px; color: var(--wood-accent); font-style: italic; margin-bottom: 4px; }
+  .cart-item-price { font-size: 14px; color: var(--text-muted); margin-bottom: 8px;}
+  
+  .cart-item-sequence {
+    background: var(--bg-main);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 6px 8px;
+    font-size: 11px;
+    width: 100%;
+    outline: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C3522' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+  }
+  .cart-item-sequence:focus { border-color: var(--primary); }
+
+  .cart-item-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; height: 100%; margin-top: 4px; }
+  .qty-btn {
+    background: rgba(0,0,0,0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .qty-num { font-size: 15px; font-weight: 600; color: var(--text-primary); min-width: 20px; text-align: center; }
+
+  .cart-footer { border-top: 1px solid var(--glass-border); padding: 24px; background: var(--surface); }
+  .cart-table-input {
+    width: 100%; padding: 14px 20px; background: var(--bg-main);
+    border: 1px solid var(--glass-border); border-radius: 50px;
+    color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; margin-bottom: 16px; outline: none;
+  }
+  .cart-table-input:focus { border-color: var(--primary); }
+  .cart-total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .cart-total-price { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--text-primary); }
+
+  .cart-whatsapp-btn {
+    width: 100%; padding: 16px; background: var(--whatsapp); color: white;
+    border: none; border-radius: 50px; font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center;
+    justify-content: center; gap: 10px; box-shadow: 0 6px 20px rgba(37,211,102,0.2);
+  }
+
+  /* UPSELL MODAL */
+  .upsell-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 600;
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .upsell-overlay.open { opacity: 1; pointer-events: all; }
+  .upsell-popup {
+    background: var(--surface);
+    border-radius: 24px; padding: 30px 24px; width: 100%; max-width: 400px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+    transform: scale(0.9) translateY(30px); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .upsell-overlay.open .upsell-popup { transform: scale(1) translateY(0); }
+
+  .upsell-salesman { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding: 14px; background: var(--bg-main); border-radius: var(--radius-md); border: 1px solid var(--glass-border); }
+  .upsell-avatar { font-size: 26px; }
+  .upsell-speech-text { font-size: 13.5px; color: var(--text-primary); font-style: italic; }
+
+  .upsell-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .upsell-option {
+    background: var(--bg-main); border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+    padding: 14px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s;
+  }
+  .upsell-option.selected { border-color: var(--primary); background: var(--primary-glow); }
+  .upsell-option-left { display: flex; align-items: center; gap: 12px; color: var(--text-primary); font-weight: 500;}
+
+  .upsell-actions { display: flex; gap: 12px; }
+  .upsell-skip { flex: 1; padding: 14px; background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); border-radius: 50px; font-weight: 600; cursor: pointer; }
+  .upsell-add { flex: 2; padding: 14px; background: var(--primary); color: #ffffff; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--text-primary); color: #ffffff; padding: 14px 28px; border-radius: 50px;
+    font-size: 13px; font-weight: 600; z-index: 700; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+    opacity: 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+  /* FOOTER */
+  footer { margin-top: 60px; padding: 40px 24px 10px; text-align: center; border-top: 1px solid var(--glass-border); background: var(--surface); }
+  footer .cafe-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  footer .tagline { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+  
+  /* TACTIX Agency Attribution */
+  footer .agency {
+    font-size: 11px;
+    color: #A1A1A1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  footer .agency:hover { color: var(--wood-accent); }
+  footer .agency span { font-weight: 700; color: var(--text-primary); }
+  footer .agency:hover span { color: var(--primary); }
+
+  .no-results { padding: 50px 20px; text-align: center; color: var(--text-muted); font-size: 14px; display: none; }
+  section { scroll-margin-top: 70px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-logo"></div>
+  <div class="hero-badge">Coffee with Passion</div>
+  <h1>The Caffeine <span>Barr</span></h1>
+  <p>Artisan Coffee • Cuban Sandwiches • Comfort Food</p>
+  <a href="https://instagram.com/cafecaffeinebarr" target="_blank" class="hero-ig">@cafecaffeinebarr</a>
+</div>
+
+<div class="sticky-nav" id="stickyNav">
+  <div class="nav-scroll">
+    <button class="nav-btn active" onclick="scrollToSection('cuban-veg', event)">🥪 Veg Cuban</button>
+    <button class="nav-btn" onclick="scrollToSection('cuban-nonveg', event)">🍗 Non-Veg Cuban</button>
+    <button class="nav-btn" onclick="scrollToSection('bites', event)">🍟 Bites & Sides</button>
+    <button class="nav-btn" onclick="scrollToSection('comfort', event)">🍝 Bowls & Pasta</button>
+    <button class="nav-btn" onclick="scrollToSection('desserts', event)">🍰 Desserts</button>
+  </div>
+</div>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search our menu..." oninput="filterMenu()">
+  </div>
+</div>
+
+<div id="menuContent">
+
+<section id="cuban-veg">
+  <div class="section-header"><div><span>Signature Press</span><h2>Veg Cuban Sandwiches</h2></div></div>
+  <div class="section-divider"></div>
+  <div class="menu-grid">
+    
+    <div class="menu-card featured" data-name="Veggie Cuban Sandwich" data-type="sandwich" data-price="165">
+      <div class="featured-badge">⭐ Classic</div>
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&h=300&fit=crop" alt="Veggie Cuban"></div>
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Veggie Cuban</div>
+          <div class="card-desc">Authentic Cuban press packed with fresh, crunchy veggies and secret sauces.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Cheesy Corn Cuban" data-type="sandwich" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Cheesy Corn Cuban</div>
+          <div class="card-desc">Sweet corn mixed with gooey melting cheese pressed in fresh Cuban bread.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Crispy Cuban" data-type="sandwich" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Crispy Cuban</div>
+          <div class="card-desc">Our signature crispy patty filling packed tight with flavor.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Bombay Style Cuban" data-type="sandwich" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Bombay Style Cuban</div>
+          <div class="card-desc">A spicy, tangy local twist on the classic Cuban sandwich.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cuban-nonveg">
+  <div class="section-header"><div><span>Meat Lovers</span><h2>Non-Veg Cuban Sandwiches</h2></div></div>
+  <div class="section-divider"></div>
+  <div class="menu-grid">
+
+    <div class="menu-card" data-name="Grilled Chicken Cuban S/W" data-type="sandwich" data-price="195">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Grilled Chicken Cuban</div>
+          <div class="card-desc">Juicy grilled chicken pressed to perfection.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹195</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Crispy Chicken Cuban S/W" data-type="sandwich" data-price="195">
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=600&h=300&fit=crop" alt="Crispy Chicken Cuban"></div>
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Crispy Chicken Cuban</div>
+          <div class="card-desc">Golden fried chicken packed in our signature toasted cuban bread.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹195</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Spicy Chicken Cuban S/W" data-type="sandwich" data-price="195">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Spicy Chicken Cuban</div>
+          <div class="card-desc">For those who like an extra kick with their sandwich.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹195</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Roasted Chicken Cuban S/W" data-type="sandwich" data-price="195">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Roasted Chicken Cuban</div>
+          <div class="card-desc">Slow-roasted savory chicken filling.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹195</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Cheesy Chicken S/W" data-type="sandwich" data-price="195">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Cheesy Chicken Cuban</div>
+          <div class="card-desc">Loaded with premium cheese melt over tender chicken.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹195</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card featured" data-name="Grill Mutton Cuban S/W" data-type="sandwich" data-price="215">
+      <div class="featured-badge">🔥 Premium</div>
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Grill Mutton Cuban</div>
+          <div class="card-desc">Rich, flavorful grilled mutton loaded with artisan spreads.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹215</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="bites">
+  <div class="section-header"><div><span>Crispy Delights</span><h2>Bites & Sides</h2></div></div>
+  <div class="section-divider"></div>
+  <div class="menu-grid">
+
+    <div class="menu-card" data-name="Garlic Bread" data-type="side" data-price="119">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Artisan Garlic Bread</div>
+          <div class="card-desc">Freshly baked bread with rich garlic butter or upgrade to cheese & pepper.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 119, ' (Classic)')">Classic</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 139, ' (Cheese & Pepper)')">Cheese & Pepper</button>
+        </div>
+        <div class="card-price">₹119</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Nachos" data-type="side" data-price="110">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Loaded Nachos</div>
+          <div class="card-desc">Crisp tortilla chips served with savory dips.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 110, ' (w/ Dip)')">w/ Dip</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 129, ' (Mexican)')">Mexican</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 139, ' (Cheesy)')">Cheesy</button>
+        </div>
+        <div class="card-price">₹110</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Crispy Chicken Nuggets" data-type="side" data-price="149">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Crispy Chicken Nuggets</div>
+          <div class="card-desc">Golden fried tender chicken bites.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹149</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Crispy Chicken Fries" data-type="side" data-price="149">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Crispy Chicken Fries</div>
+          <div class="card-desc">Long, crispy strips of savory chicken.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹149</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Chicken Wings" data-type="side" data-price="249">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Signature Chicken Wings</div>
+          <div class="card-desc">Juicy wings available in Coated Spicy or Smoky BBQ flavors.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 249, ' (Coated Spicy)')">Coated Spicy</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 249, ' (BBQ)')">BBQ Wings</button>
+        </div>
+        <div class="card-price">₹249</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="French Fries" data-type="side" data-price="99">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">French Fries</div>
+          <div class="card-desc">Classic, Peri Peri or loaded with Cheesy Sauce.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 99, ' (Classic)')">Classic</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 109, ' (Peri Peri)')">Peri Peri</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 119, ' (Cheesy Sauce)')">Cheesy</button>
+        </div>
+        <div class="card-price">₹99</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Potato Wedges" data-type="side" data-price="119">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Potato Wedges</div>
+          <div class="card-desc">Thick-cut, seasoned golden wedges.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹119</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Cheese Corn Nuggets" data-type="side" data-price="149">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Cheese Corn Nuggets</div>
+          <div class="card-desc">Sweet corn and melted cheese in a crispy shell.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="card-price">₹149</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="comfort">
+  <div class="section-header"><div><span>Hearty Bowls</span><h2>Pasta, Mac & Maggi</h2></div></div>
+  <div class="section-divider"></div>
+  <div class="menu-grid">
+
+    <div class="menu-card" data-name="Mac 'N' Cheese" data-type="side" data-price="179">
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=600&h=300&fit=crop" alt="Mac N Cheese"></div>
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Mac 'N' Cheese Bowls</div>
+          <div class="card-desc">Rich, creamy baked macaroni and cheese. Available in Classic, Herb, Chicken, or Chicken Egg variations.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 179, ' (Classic)')">Classic</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 189, ' (Herb)')">Herb</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 199, ' (Chicken)')">Chicken</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 219, ' (Chicken Egg)')">Chic-Egg</button>
+        </div>
+        <div class="card-price">₹179</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="White Sauce Pasta" data-type="side" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">White Sauce Pasta</div>
+          <div class="card-desc">Creamy, rich white sauce with herbs.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 165, ' (Veg)')">Veg (₹165)</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 185, ' (Non Veg)')">Non-Veg (₹185)</button>
+        </div>
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Arrabbiata Pasta" data-type="side" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Arrabbiata Pasta</div>
+          <div class="card-desc">Spicy red tomato sauce tossed pasta.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 165, ' (Veg)')">Veg (₹165)</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 185, ' (Non Veg)')">Non-Veg (₹185)</button>
+        </div>
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Pink Sauce Pasta" data-type="side" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Pink Sauce Pasta</div>
+          <div class="card-desc">The perfect blend of creamy white and tangy red sauce.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 165, ' (Veg)')">Veg (₹165)</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 185, ' (Non Veg)')">Non-Veg (₹185)</button>
+        </div>
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Agli e Olio Pasta" data-type="side" data-price="165">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Agli e Olio</div>
+          <div class="card-desc">Classic garlic, olive oil, and chilli flake toss.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 165, ' (Veg)')">Veg (₹165)</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 185, ' (Non Veg)')">Non-Veg (₹185)</button>
+        </div>
+        <div class="card-price">₹165</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+    <div class="menu-card" data-name="Maggi Bowls" data-type="side" data-price="89">
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Street Style Maggi</div>
+          <div class="card-desc">Everyone's favorite comfort noodles, cooked to perfection.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 89, ' (Veg)')">Veg</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 99, ' (Egg)')">Egg</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 129, ' (Chicken)')">Chicken</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 149, ' (Chic-Egg)')">Chic-Egg</button>
+        </div>
+        <div class="card-price">₹89</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="desserts">
+  <div class="section-header"><div><span>Sweet Treats</span><h2>Brownies</h2></div></div>
+  <div class="section-divider"></div>
+  <div class="menu-grid">
+    <div class="menu-card featured" data-name="Signature Brownie" data-type="side" data-price="129">
+      <div class="featured-badge">✨ Indulge</div>
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&h=300&fit=crop" alt="Brownie"></div>
+      <div class="card-top-content">
+        <div class="card-body">
+          <div class="card-name">Rich Chocolate Brownie</div>
+          <div class="card-desc">Warm, fudgy chocolate brownie. Best enjoyed with a scoop of vanilla ice cream.</div>
+        </div>
+      </div>
+      <div class="card-bottom-action">
+        <div class="size-picker">
+          <button class="size-pill active" onclick="updateCardPrice(this, 129, ' (Plain)')">Plain</button>
+          <button class="size-pill" onclick="updateCardPrice(this, 159, ' (w/ Ice Cream)')">w/ Ice Cream</button>
+        </div>
+        <div class="card-price">₹129</div>
+        <button class="order-btn" onclick="openUpsell(this)">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="no-results" id="noResults">Culinary item not discovered. Try a different keyword!</div>
+
+</div>
+
+<footer>
+  <div class="cafe-name">The Caffeine Barr</div>
+  <div class="tagline">Coffee With Passion</div>
+  <a href="#" class="agency">created by <span>tactix presence</span></a>
+</footer>
+
+<button class="cart-fab" id="cartFab" onclick="openCart()">
+  <span>🛒</span>
+  <span id="cartFabText">View Order</span>
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <div class="cart-drawer-title">🛒 Current Order</div>
+    <button class="cart-close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items-list" id="cartItemsList">
+    <div class="cart-empty" id="cartEmpty">
+      <p>Your order tray is empty.<br>Select premium menu items to begin.</p>
+    </div>
+  </div>
+
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <input class="cart-table-input" id="tableNumber" type="text" placeholder="Specify Table Number / Spot Location">
+    <div class="cart-total-row">
+      <div style="font-size:14px; text-transform:uppercase; color:var(--text-muted);">Grand Bill</div>
+      <div class="cart-total-price" id="cartTotal">₹0</div>
+    </div>
+    <button class="cart-whatsapp-btn" onclick="checkout()">
+      <span>💬</span>
+      Transmit Order via WhatsApp
+    </button>
+  </div>
+</div>
+
+<div class="upsell-overlay" id="upsellOverlay">
+  <div class="upsell-popup">
+    <div class="upsell-salesman">
+      <div class="upsell-avatar">👨‍🍳</div>
+      <div class="upsell-speech">
+        <div class="upsell-speech-text" id="upsellSpeechText">"Would you like to complete your order experience with our frequent pairings?"</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-bottom:20px;">
+      <div id="upsellItemName" style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--text-primary);">Item Name</div>
+      <div id="upsellItemPrice" style="color:var(--text-primary); font-weight:600; font-size:16px;">₹0</div>
+    </div>
+    <div class="upsell-options" id="upsellOptions"></div>
+    <div class="upsell-actions">
+      <button class="upsell-skip" onclick="confirmUpsell(false)">Skip</button>
+      <button class="upsell-add" id="upsellAddBtn" onclick="confirmUpsell(true)">Add to Cart ✨</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// CART ARCHITECTURE VARIABLES
+const OWNER_WHATSAPP = '917738860171'; 
+let cart = [];
+let upsellPending = null;
+
+// ENGINE UPSELL STRUCTURING DATA
+const upsellData = {
+  sandwich: {
+    speech: '"Great choice! Would you like to pair this with a fresh side or fries?"',
+    options: [
+      { emoji: '🍟', name: 'Peri Peri French Fries', price: 109 },
+      { emoji: '🧀', name: 'Classic Garlic Bread', price: 119 },
+      { emoji: '🥤', name: 'Cold Drink', price: 50 } // Generic placeholder
+    ]
+  },
+  side: {
+    speech: '"Excellent addition! Add a sweet finish?"',
+    options: [
+      { emoji: '🍫', name: 'Brownie w/ Ice Cream', price: 159 },
+      { emoji: '🧀', name: 'Cheesy Nachos', price: 139 }
+    ]
+  }
+};
+
+// MULTI-SIZE CARD DYNAMIC CONTROLLER
+function updateCardPrice(button, price, suffix) {
+  const card = button.closest('.menu-card');
+  card.dataset.price = price;
+  if(suffix !== undefined) {
+    card.dataset.suffix = suffix;
+  }
+  const priceDisplay = card.querySelector('.card-price');
+  priceDisplay.textContent = '₹' + price;
+  
+  const pills = button.parentNode.querySelectorAll('.size-pill');
+  pills.forEach(p => p.classList.remove('active'));
+  button.classList.add('active');
+}
+
+// MULTIPLE PAIRING BUTTON LOGIC
+function updateUpsellButton() {
+  const btn = document.getElementById('upsellAddBtn');
+  const count = upsellPending.addons.length;
+  if (count === 0) {
+    btn.textContent = "Add to Cart ✨";
+  } else {
+    btn.textContent = `Pair with ${count} Item${count > 1 ? 's' : ''} ✨`;
+  }
+}
+
+function openUpsell(btn) {
+  const card = btn.closest('[data-name]');
+  const baseName = card.dataset.name;
+  const suffix = card.dataset.suffix || '';
+  const name = baseName + suffix;
+  const price = parseFloat(card.dataset.price);
+  const type = card.dataset.type || 'sandwich';
+  const data = upsellData[type] || upsellData.sandwich;
+
+  upsellPending = { name, price, addons: [] };
+
+  document.getElementById('upsellSpeechText').textContent = data.speech;
+  document.getElementById('upsellItemName').textContent = name;
+  document.getElementById('upsellItemPrice').textContent = '₹' + price;
+
+  const optContainer = document.getElementById('upsellOptions');
+  optContainer.innerHTML = '';
+  data.options.forEach(opt => {
+    const div = document.createElement('div');
+    div.className = 'upsell-option';
+    div.innerHTML = `
+      <div class="upsell-option-left">
+        <span>${opt.emoji}</span>
+        <span>${opt.name}</span>
+      </div>
+      <span style="color:var(--text-primary); font-weight:600;">+₹${opt.price}</span>
+    `;
+    div.onclick = () => {
+      div.classList.toggle('selected');
+      const exists = upsellPending.addons.findIndex(a => a.name === opt.name);
+      if (exists > -1) {
+        upsellPending.addons.splice(exists, 1);
+      } else {
+        upsellPending.addons.push(opt);
+      }
+      updateUpsellButton();
+    };
+    optContainer.appendChild(div);
+  });
+
+  updateUpsellButton();
+  document.getElementById('upsellOverlay').classList.add('open');
+}
+
+function confirmUpsell(withAddons) {
+  document.getElementById('upsellOverlay').classList.remove('open');
+  if (!upsellPending) return;
+  const { name, price, addons } = upsellPending;
+  
+  if (withAddons && addons.length > 0) {
+    const combinedName = addons.map(a => a.name).join(' + ');
+    const combinedPrice = addons.reduce((sum, a) => sum + a.price, 0);
+    addToCart(name, price, combinedName, combinedPrice);
+  } else {
+    addToCart(name, price, null, 0);
+  }
+  upsellPending = null;
+}
+
+function addToCart(name, price, addonName, addonPrice) {
+  const id = name + (addonName || '');
+  const existing = cart.find(i => i.id === id);
+  const total = price + (addonPrice || 0);
+
+  if (existing) { 
+    existing.qty++; 
+  } else { 
+    cart.push({ 
+      id, 
+      name, 
+      price, 
+      addonName, 
+      addonPrice: addonPrice || 0, 
+      total, 
+      qty: 1, 
+      servingSequence: 'Serve Together' // Default sequence
+    }); 
+  }
+
+  renderCart();
+  updateFab();
+  showToast(`Added: ${addonName ? name + ' + ' + addonName : name}`);
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
+  renderCart();
+  updateFab();
+}
+
+function updateSequence(id, newSequence) {
+  const item = cart.find(i => i.id === id);
+  if (item) {
+    item.servingSequence = newSequence;
+  }
+}
+
+function renderCart() {
+  const list = document.getElementById('cartItemsList');
+  const empty = document.getElementById('cartEmpty');
+  const footer = document.getElementById('cartFooter');
+
+  Array.from(list.querySelectorAll('.cart-item')).forEach(el => el.remove());
+
+  if (cart.length === 0) {
+    empty.style.display = 'block';
+    footer.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+  footer.style.display = 'block';
+
+  let totalPrice = 0;
+  cart.forEach(item => {
+    totalPrice += item.total * item.qty;
+    const safeId = item.id.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        ${item.addonName ? `<div class="cart-item-addon">+ ${item.addonName}</div>` : ''}
+        <div class="cart-item-price">₹${item.total} each</div>
+        
+        <select class="cart-item-sequence" onchange="updateSequence('${safeId}', this.value)">
+          <option value="Served First" ${item.servingSequence === 'Served First' ? 'selected' : ''}>Serve First (Drinks/Sides)</option>
+          <option value="Serve Together" ${item.servingSequence === 'Serve Together' ? 'selected' : ''}>Serve Together (Mains)</option>
+          <option value="Serve Last" ${item.servingSequence === 'Serve Last' ? 'selected' : ''}>Serve Last (Dessert)</option>
+        </select>
+
+      </div>
+      <div class="cart-item-controls">
+        <button class="qty-btn minus" onclick="changeQty('${safeId}', -1)">−</button>
+        <span class="qty-num">${item.qty}</span>
+        <button class="qty-btn plus" onclick="changeQty('${safeId}', 1)">+</button>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+  document.getElementById('cartTotal').textContent = '₹' + totalPrice;
+}
+
+function updateFab() {
+  const fab = document.getElementById('cartFab');
+  const badge = document.getElementById('cartBadge');
+  const total = cart.reduce((s, i) => s + i.qty, 0);
+
+  badge.textContent = total;
+  if (total === 0) { fab.classList.remove('visible'); } 
+  else { fab.classList.add('visible'); }
+  document.getElementById('cartFabText').textContent = total === 1 ? 'View Order' : `View Order (${total})`;
+}
+
+function openCart() {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+}
+
+// WHATSAPP REDIRECT SYSTEM WITH SEQUENCE
+function checkout() {
+  if (cart.length === 0) return;
+  const tableNum = document.getElementById('tableNumber').value.trim() || 'Not Specified';
+  const grandTotal = cart.reduce((s, i) => s + i.total * i.qty, 0);
+
+  // Group items by sequence
+  const groups = {
+    "Served First": { emoji: "🔥", items: [] },
+    "Serve Together": { emoji: "🍽️", items: [] },
+    "Serve Last": { emoji: "🍰", items: [] }
+  };
+
+  cart.forEach(item => {
+    let seq = item.servingSequence || "Serve Together";
+    if (groups[seq]) groups[seq].items.push(item);
+  });
+
+  let message = `☕ *THE CAFFEINE BARR* \n--------------------------------\n*Table / Spot:* ${tableNum}\n\n`;
+
+  for (let key in groups) {
+    if (groups[key].items.length > 0) {
+      message += `${groups[key].emoji} *${key.toUpperCase()}:*\n`;
+      groups[key].items.forEach(item => {
+        let line = `• ${item.qty}x ${item.name}`;
+        if (item.addonName) line += ` + ${item.addonName}`;
+        line += ` — ₹${(item.total * item.qty)}`;
+        message += line + '\n';
+      });
+      message += '\n';
+    }
+  }
+
+  message += `--------------------------------\n*Total Bill Amount:* ₹${grandTotal}\n\n*Status:* Order Requested via Digital QR Menu`;
+
+  const waURL = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(message)}`;
+  window.open(waURL, '_blank');
+
+  cart = [];
+  renderCart();
+  updateFab();
+  closeCart();
+  document.getElementById('tableNumber').value = '';
+  showToast(`Order compiled & transmitted!`);
+}
+
+function scrollToSection(id, e) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    if (e && e.target) e.target.classList.add('active');
+  }
+}
+
+function filterMenu() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.menu-card');
+  let found = 0;
+
+  cards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const show = !q || name.includes(q);
+    card.style.display = show ? '' : 'none';
+    if (show) found++;
+  });
+
+  document.querySelectorAll('section').forEach(sec => {
+    const regularCardsVisible = [...sec.querySelectorAll('.menu-card')].some(c => c.style.display !== 'none');
+    sec.style.display = regularCardsVisible ? '' : 'none';
+  });
+
+  document.getElementById('noResults').style.display = found === 0 ? 'block' : 'none';
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// SCROLLSPY CORE LOGIC 
+const sections = ['cuban-veg','cuban-nonveg','bites','comfort','desserts'];
+const navBtns = document.querySelectorAll('.nav-btn');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 100) current = id;
+  });
+  navBtns.forEach((btn, i) => {
+    btn.classList.toggle('active', sections[i] === current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
